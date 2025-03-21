@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Interactive Dashboard</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="dashboard">
         <div class="sidebar">
-            <div class="logo">Dashboard</div>
+            <div class="logo">DataViz</div>
             <nav>
                 <ul>
                     <li class="active"><a href="#" data-section="overview">Overview</a></li>
@@ -22,11 +22,136 @@
             <div class="user-info">
                 <div class="avatar"></div>
                 <div class="user-details">
-                    <h3>M Ahmed Butt</h3>
+                    <h3>John Doe</h3>
                     <p>Administrator</p>
                 </div>
             </div>
         </div>
+        
+        <div class="main-content">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="search-icon">🔍</i></button>
+                </div>
+                <div class="actions">
+                    <button class="notifications">🔔</button>
+                    <button class="messages">✉️</button>
+                    <button class="settings">⚙️</button>
+                </div>
+            </header>
+            
+            <div class="content-wrapper">
+                <div class="section active" id="overview">
+                    <h1>Dashboard Overview</h1>
+                    <div class="stats-cards">
+                        <div class="card" id="sales-card">
+                            <h3>Total Sales</h3>
+                            <p class="stat-value">$124,587</p>
+                            <p class="stat-change positive">+12.5%</p>
+                        </div>
+                        <div class="card" id="users-card">
+                            <h3>Active Users</h3>
+                            <p class="stat-value">8,752</p>
+                            <p class="stat-change positive">+8.3%</p>
+                        </div>
+                        <div class="card" id="orders-card">
+                            <h3>New Orders</h3>
+                            <p class="stat-value">1,245</p>
+                            <p class="stat-change negative">-2.7%</p>
+                        </div>
+                        <div class="card" id="revenue-card">
+                            <h3>Revenue</h3>
+                            <p class="stat-value">$45,698</p>
+                            <p class="stat-change positive">+5.2%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-container">
+                        <div class="chart-card">
+                            <h3>Sales Overview</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Users by Region</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="regionChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card full-width">
+                            <h3>Monthly Performance</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h2>Recent Activity</h2>
+                        <ul id="activity-list">
+                            <!-- Activity items will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Other sections for sales, users, traffic, settings -->
+                <div class="section" id="sales">
+                    <h1>Sales Analytics</h1>
+                    <div class="chart-card full-width">
+                        <h3>Sales Trends</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="salesTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section" id="users">
+                    <h1>User Statistics</h1>
+                    <div class="chart-card">
+                        <h3>User Growth</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section" id="traffic">
+                    <h1>Traffic Analysis</h1>
+                    <div class="chart-card">
+                        <h3>Traffic Sources</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="trafficSourcesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section" id="settings">
+                    <h1>Dashboard Settings</h1>
+                    <div class="settings-form">
+                        <form id="dashboard-settings">
+                            <div class="form-group">
+                                <label for="theme">Theme</label>
+                                <select id="theme">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                    <option value="blue">Blue</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="refreshRate">Data Refresh Rate (seconds)</label>
+                                <input type="number" id="refreshRate" min="5" max="600" value="30">
+                            </div>
+                            <button type="submit" class="btn-save">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
