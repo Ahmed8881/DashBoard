@@ -42,10 +42,12 @@ body {
 /* Sidebar Styles */
 .sidebar {
     width: 260px;
-    background-color: var(--sidebar-bg);
+    background-color: #3A0CA3;
     color: var(--sidebar-text);
     padding: 30px 20px;
-    display: flex;
+    margin-top: 1rem;
+    display: flex
+;
     flex-direction: column;
     transform-style: preserve-3d;
     transform: translateZ(20px);
