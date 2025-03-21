@@ -5,33 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Interactive Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <div class="dashboard">
-        <div class="sidebar">
-            <div class="logo">Dashboard</div>
-            <nav>
-                <ul>
-                    <li class="active"><a href="#" data-section="overview">Overview</a></li>
-                    <li><a href="#" data-section="sales">Sales</a></li>
-                    <li><a href="#" data-section="users">Users</a></li>
-                    <li><a href="#" data-section="traffic">Traffic</a></li>
-                    <li><a href="#" data-section="settings">Settings</a></li>
+        <nav class="top-navbar">
+            <div class="navbar-container">
+                <div class="logo">Dashboard</div>
+                <ul class="nav-links">
+                    <li class="active"><a href="#" data-section="overview"><i class="fa fa-home"></i> Overview</a></li>
+                    <li><a href="#" data-section="sales"><i class="fa fa-chart-line"></i> Sales</a></li>
+                    <li><a href="#" data-section="users"><i class="fa fa-users"></i> Users</a></li>
+                    <li><a href="#" data-section="traffic"><i class="fa fa-chart-bar"></i> Traffic</a></li>
+                    <li><a href="#" data-section="settings"><i class="fa fa-cog"></i> Settings</a></li>
                 </ul>
-            </nav>
-            <div class="user-info">
-                <div class="avatar"></div>
-                <div class="user-details">
-                    <h3>M Ahmed Butt</h3>
-                    <p>Administrator</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="main-content">
-            <header>
                 <div class="search-bar">
                     <input type="text" placeholder="Search...">
                     <button><i class="fa fa-search"></i></button>
@@ -39,10 +26,18 @@
                 <div class="actions">
                     <button class="notifications"><i class="fa fa-bell"></i></button>
                     <button class="messages"><i class="fa fa-envelope"></i></button>
-                    <button class="settings"><i class="fa fa-cog"></i></button>
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h3>M Ahmed Butt</h3>
+                            <p>Administrator</p>
+                        </div>
+                    </div>
                 </div>
-            </header>
-            
+            </div>
+        </nav>
+        
+        <div class="main-content">            
             <div class="content-wrapper">
                 <div class="section active" id="overview">
                     <h1>Dashboard Overview</h1>
